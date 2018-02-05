@@ -1,0 +1,31 @@
+{
+  "name": "electron-quick-start",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "scripts": {
+    "prod": "webpack --config webpack.build.config.js && electron --noDevServer .",
+    "dev": "electron bootwithbabel",
+    "build": "webpack --config webpack.build.config.js",
+    "package": "webpack --config webpack.build.config.js",
+    "postpackage": "electron-packager ./ --out=./builds"
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "Nathan Carlson",
+  "license": "MIT",
+  "dependencies": {
+    "boilerplate": "git+ssh://git@github.com/nscarlson/boilerplate",
+    "pbkdf2": "^3.0.14",
+    "randombytes": "^2.0.6",
+    "secure-random": "^1.1.1",
+    "unorm": "^1.4.1",
+    "url": "^0.11.0"
+  }
+}
