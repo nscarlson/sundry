@@ -30,7 +30,6 @@ const deriveChecksumBits = (entropyBuffer) => {
     let CS = ENT / 32
     let hash = createHash('sha256').update(entropyBuffer).digest()
 
-    console.log('deriveChecksumBits', bytesToBinary([].slice.call(hash)).slice(0, CS))
     return bytesToBinary([].slice.call(hash)).slice(0, CS)
 }
 
