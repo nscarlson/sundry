@@ -108,14 +108,16 @@ const entropyToMnemonic = (entropy, language) => {
     return language === 'japanese' ? words.join('\u3000') : words.join(' ')
 }
 
-const generateMnemonic = (strength, language) => {
+const generateMnemonic = (strength, rng, language) => {
     strength = strength || 256
 
     if (strength % 32 !== 0) {
         throw new TypeError(INVALID_ENTROPY)
     }
 
-    return entropyToMnemonic(randomBuffer(strength / 8), language)
+    rng = rng || randomBuffer
+
+    return entropyToMnemonic(rng(strength / 8), language)
 }
 
 const validateMnemonic = (mnemonic, language) => {
