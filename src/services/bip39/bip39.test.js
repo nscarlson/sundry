@@ -356,6 +356,11 @@ describe('bip39 service', () => {
         vectors.forEach((vector) => {
             expect(bip39.validateMnemonic(vector.mnemonic, vector.language)).toBe(true)
         })
+
+        invalidVectors.forEach((vector) => {
+            expect(bip39.validateMnemonic(vector.mnemonic, vector.language))
+                .toBe(false)
+        })
     })
 
     it('throws an error for invalid mnemonic phrases', () => {
@@ -380,6 +385,22 @@ describe('bip39 service', () => {
 
         expect(() => {
             bip39.entropyToMnemonic(entropy, null)
+        }).toThrowError('Invalid entropy')
+    })
+
+    it('throws error in mnemonicToEntropy with invalid mnemonic', () => {
+        const mnemonic = 'abandon abandon abandon abandon'
+
+        expect(() => {
+            bip39.mnemonicToEntropy(mnemonic, 'english')
+        }).toThrowError('Invalid mnemonic')
+    })
+
+    it('throws invalid entropy error in mnemonicToEntropy with mnemonic of invalid length', () => {
+        const mnemonic = 'abandon abandon abandon'
+
+        expect(() => {
+            bip39.mnemonicToEntropy(mnemonic, 'english')
         }).toThrowError('Invalid entropy')
     })
 })
