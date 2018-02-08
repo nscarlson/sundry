@@ -351,6 +351,12 @@ describe('bip39 service', () => {
         })
     })
 
+    it('validates mnemonics correctly', () => {
+        vectors.forEach((vector) => {
+            expect(bip39.validateMnemonic(vector.mnemonic, vector.language)).toBe(true)
+        })
+    })
+
     it('throws an error for invalid mnemonic phrases', () => {
         invalidVectors.forEach((vector) => {
             expect(() => {
