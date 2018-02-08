@@ -70,13 +70,10 @@ const mnemonicToEntropy = (mnemonic, language) => {
 
     // calculate the checksum and compare
     const entropyBytes = entropyBits.match(/(.{1,8})/g).map(binaryToByte)
-    if (entropyBytes.length < 16) {
-        throw new Error(INVALID_ENTROPY)
-    } else if (entropyBytes.length > 32) {
-        throw new Error(INVALID_ENTROPY)
-    } else if (entropyBytes.length % 4 !== 0) {
+    if (entropyBytes.length < 16 || entropyBytes.length > 32 || entropyBytes.length % 4 !== 0) {
         throw new Error(INVALID_ENTROPY)
     }
+
     let entropy = Buffer.from(entropyBytes)
     let newChecksum = deriveChecksumBits(entropy)
     if (newChecksum !== checksumBits) throw new Error(INVALID_CHECKSUM)
@@ -90,11 +87,7 @@ const entropyToMnemonic = (entropy, language) => {
     if (!Buffer.isBuffer(entropy)) entropy = Buffer.from(entropy, 'hex')
 
     // 128 <= ENT <= 256
-    if (entropy.length < 16) {
-        throw new TypeError(INVALID_ENTROPY)
-    } else if (entropy.length > 32) {
-        throw new TypeError(INVALID_ENTROPY)
-    } else if (entropy.length % 4 !== 0) {
+    if (entropy.length < 16 || entropy.length > 32 || entropy.length % 4 !== 0) {
         throw new TypeError(INVALID_ENTROPY)
     }
 

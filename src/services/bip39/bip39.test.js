@@ -347,6 +347,7 @@ describe('bip39 service', () => {
     it('returns the RNG entropy from generateMnemonic unmodified', () => {
         vectors.forEach((vector) => {
             const rng = () => Buffer.from(vector.entropy, 'hex')
+
             expect(bip39.generateMnemonic(undefined, rng, vector.language)).toEqual(vector.mnemonic)
         })
     })
@@ -363,5 +364,14 @@ describe('bip39 service', () => {
                 bip39.mnemonicToEntropy(vector.mnemonic, vector.language)
             }).toThrowError('Invalid mnemonic')
         })
+    })
+
+    it('throws error generating mnemonic with invalid entropy', () => {
+        const rng = () => vectors[0].entropy
+        const strength = 31
+
+        expect(() => {
+            bip39.generateMnemonic(strength, rng, null)
+        }).toThrowError('Invalid entropy')
     })
 })
