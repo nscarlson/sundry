@@ -84,7 +84,9 @@ const mnemonicToEntropy = (mnemonic, language) => {
 const entropyToMnemonic = (entropy, language) => {
     const wordList = wordLists(language)
 
-    if (!Buffer.isBuffer(entropy)) entropy = Buffer.from(entropy, 'hex')
+    if (!Buffer.isBuffer(entropy)) {
+        entropy = Buffer.from(entropy, 'hex')
+    }
 
     // 128 <= ENT <= 256
     if (entropy.length < 16 || entropy.length > 32 || entropy.length % 4 !== 0) {
@@ -93,7 +95,6 @@ const entropyToMnemonic = (entropy, language) => {
 
     const entropyBits = bytesToBinary([].slice.call(entropy))
     const checksumBits = deriveChecksumBits(entropy)
-
     const bits = entropyBits + checksumBits
     const chunks = bits.match(/(.{1,11})/g)
     const words = chunks.map((binary) => wordList[binaryToByte(binary)])

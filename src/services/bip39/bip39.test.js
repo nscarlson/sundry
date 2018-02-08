@@ -374,4 +374,12 @@ describe('bip39 service', () => {
             bip39.generateMnemonic(strength, rng, null)
         }).toThrowError('Invalid entropy')
     })
+
+    it('throws error in entropyToMnemonic with entropy of invalid length', () => {
+        const entropy = '0000000000000000000000000000000'
+
+        expect(() => {
+            bip39.entropyToMnemonic(entropy, null)
+        }).toThrowError('Invalid entropy')
+    })
 })
