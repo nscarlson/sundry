@@ -49,5 +49,4 @@ main.js.map
 
 .idea
 npm-debug.log.*
-src/services/bitcoin/services/hd
 int-config-crlsn/node_modules
