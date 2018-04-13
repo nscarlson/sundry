@@ -1,4 +1,4 @@
-export default {
+const bip44 = {
     AC: 0x80000033,
     ACC: 0x800000a1,
     ACT: 0x8000029a,
@@ -230,3 +230,5 @@ export default {
     ZRC: 0x8000001b,
     ZYD: 0x80000067
 }
+
+export default bip44
