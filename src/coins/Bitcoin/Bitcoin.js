@@ -9,7 +9,7 @@ const Bitcoin = new Coin({
     bip44: bip44.BTC,
     pubKeyHash: 0x00,
     scriptHash: 0x05,
-    wif: 0x80
+    wif: 0x80,
 })
 
 export default Bitcoin
