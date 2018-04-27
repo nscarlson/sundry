@@ -1,3 +1,5 @@
+// TODO: de-duplicate this information with bip44.js
+
 const constants = {
     'AIB': 0x80000037,
     'ARK': 0x8000006f,

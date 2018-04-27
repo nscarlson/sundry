@@ -1,0 +1,15 @@
+{
+    "private": true,
+    "name": "bip44",
+    "version": "1.0.0",
+    "description": "BIP-44 Constants",
+    "keywords": [
+      "sundry",
+      "universal",
+      "wallet",
+      "bitcoin",
+      "open"
+    ],
+    "author": "Nathan Carlson",
+    "license": "MIT"
+}
