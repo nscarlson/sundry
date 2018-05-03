@@ -1,1 +1,1 @@
-[![Waffle.io - Issues in progress](https://badge.waffle.io/sundryio/sundry.png?label=in%20progress&title=In%20Progress)](http://waffle.io/sundryio/sundry)
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/sundryio/sundry.svg?columns=all)](https://waffle.io/sundryio/sundry)
