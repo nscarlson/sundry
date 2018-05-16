@@ -2,7 +2,7 @@
   "private": true,
   "name": "Sundry",
   "version": "1.0.0",
-  "description": "An elegant cryptocurrency wallet for a more civilized age.",
+  "description": "An elegant cryptocurrency tool for a more civilized age.",
   "main": "src/main.js",
   "scripts": {
     "build": "react-scripts build",

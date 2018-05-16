@@ -1,26 +1,26 @@
 {
     "private": true,
-    "name": "Sundry",
+    "name": "sundry",
     "version": "1.0.0",
-    "description": "An elegant cryptocurrency wallet for a more civilized age.",
+    "description": "An elegant cryptocurrency tool for a more civilized age.",
     "main": "src/main.js",
     "scripts": {
-      "build": "react-scripts build",
-      "electron": "electron .",
-      "start": "react-scripts start"
+        "build": "react-scripts build",
+        "dev": "pm2 start --interpreter babel-node",
+        "electron": "electron .",
+        "start": "react-scripts start"
     },
     "repository": "https://github.com/electron/electron-quick-start",
     "keywords": [
-      "sundry",
-      "universal",
-      "wallet",
-      "bitcoin",
-      "open"
+        "sundry",
+        "universal",
+        "wallet",
+        "bitcoin",
+        "open"
     ],
     "author": "Nathan Carlson",
     "license": "MIT",
     "workspaces": [
         "packages/*"
     ]
-  }
-  
+}

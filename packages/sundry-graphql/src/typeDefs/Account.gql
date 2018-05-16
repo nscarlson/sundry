@@ -1,0 +1,10 @@
+type Account {
+    "Unused BIP44 derived address"
+    depositAddress: Address!
+    "BIP44 derivation account number"
+    number: Int!
+    "Used addresses associated with account"
+    addresses: [CryptoAddress!]!
+    "Total balance of this account"
+    balance: Float!
+}

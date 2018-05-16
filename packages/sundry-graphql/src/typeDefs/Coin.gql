@@ -1,0 +1,6 @@
+interface Coin {
+    displayName: String!
+    symbol: String!
+    bip32: Bip32!
+    bip44: Bip44!
+}

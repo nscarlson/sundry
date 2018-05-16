@@ -1,0 +1,3 @@
+interface Extension {
+    scopes: [Scope]!
+}

@@ -1,0 +1,6 @@
+interface Wallet {
+    addresses: [CryptoAddress]!
+    customName: String!
+    displayName: String!
+    type: String!
+}
