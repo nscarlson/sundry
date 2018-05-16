@@ -1,2 +1,2 @@
-require("babel-register")
-require("./services/graphql/index.js")
+require('babel-register')
+require('./services/graphql')

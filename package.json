@@ -6,7 +6,7 @@
     "main": "src/main.js",
     "scripts": {
         "build": "react-scripts build",
-        "dev": "pm2 start --interpreter babel-node",
+        "dev": "pm2 start process.config.js",
         "electron": "electron .",
         "start": "react-scripts start"
     },
