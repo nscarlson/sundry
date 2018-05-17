@@ -49,4 +49,4 @@ main.js.map
 
 .idea
 npm-debug.log.*
-int-config-crlsn/node_modules
+eslint-config-sundry/node_modules

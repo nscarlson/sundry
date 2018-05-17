@@ -1,2 +1,2 @@
 require('babel-register')
-require('./services/graphql')
+require('./services/server')

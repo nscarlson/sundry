@@ -1,0 +1,23 @@
+{
+    "name": "eslint-config-sundry",
+    "version": "1.0.0",
+    "description": "Sundry eslint configuration",
+    "scripts": {
+        "build": "react-scripts build",
+        "electron": "electron .",
+        "start": "react-scripts start"
+    },
+    "keywords": ["sundry", "wallet", "bitcoin", "open"],
+    "author": "Nathan Carlson",
+    "license": "MIT",
+    "dependencies": {
+        "pbkdf2": "^3.0.14",
+        "prettier-eslint": "^8.8.1",
+        "randombytes": "^2.0.6",
+        "react-scripts": "1.1.1",
+        "secure-random": "^1.1.1",
+        "unorm": "^1.4.1",
+        "url": "^0.11.0"
+    },
+    "workspaces": ["packages/*"]
+}
