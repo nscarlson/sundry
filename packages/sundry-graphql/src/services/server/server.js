@@ -11,10 +11,11 @@ import {
 } from './services/middleware'
 import { graphqlExpress } from 'apollo-server-express'
 
-const server = express()
+const app = express()
 
-server.use(graphqlExpressMiddleware(), playgroundExpressMiddleware())
+app.use(graphqlExpressMiddleware())
+app.use(playgroundExpressMiddleware())
 
-server.listen(3000, () => {
+app.listen(3000, () => {
     console.info(`GraphQL server listening on port 3000`)
 })

@@ -1,13 +1,22 @@
 import { graphqlExpress } from 'apollo-server-express'
 import bodyParser from 'body-parser'
 import { Router } from 'express'
-import { buildSchema } from 'graphql-tools'
+import { makeExecutableSchema } from 'graphql-tools'
 
-const typeDefs = buildSchema(`
+const typeDefs = `
     type Query {
         hello: String
     }
-`)
+`
+
+const resolvers = {
+    Query: { hello: () => 'Hello World!' },
+}
+
+const myGraphQLSchema = makeExecutableSchema({
+    typeDefs,
+    resolvers,
+})
 
 const graphqlExpressMiddleware = () => {
     const router = new Router()
@@ -16,7 +25,7 @@ const graphqlExpressMiddleware = () => {
         '/graphql',
         bodyParser.json(),
         graphqlExpress({
-            schema,
+            schema: myGraphQLSchema,
         }),
     )
 

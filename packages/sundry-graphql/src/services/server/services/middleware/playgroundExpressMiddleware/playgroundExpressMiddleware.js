@@ -1,10 +1,10 @@
 import { Router } from 'express'
 import playground from 'graphql-playground-middleware-express'
 
-import { GRAPHQL_PORT } from 'sundry-graphql/src/config'
+import config from 'sundry-graphql/src/config'
 
 const playgroundExpressMiddleware = () => {
-    const endpoint = `http://localhost:${GRAPHQL_PORT}`
+    const endpoint = `http://localhost:${config.GRAPHQL_PORT}/graphql`
     const router = new Router()
 
     router.use(
