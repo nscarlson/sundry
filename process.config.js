@@ -1,9 +1,9 @@
 module.exports = {
     apps: [
         {
+            cwd: './packages/sundry-graphql',
             name: 'sundry-graphql',
-            next_gen_js: true,
-            script: 'packages/sundry-graphql/src/index.js'
+            script: 'src/index.js',
         },
     ],
 }

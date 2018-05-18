@@ -11,11 +11,17 @@
         "start": "react-scripts start"
     },
     "repository": "https://github.com/sundryio/sundry",
-    "keywords": ["sundry", "universal", "wallet", "bitcoin", "open"],
+    "keywords": [
+        "sundry",
+        "universal",
+        "wallet",
+        "bitcoin",
+        "open"
+    ],
     "author": "Nathan Carlson",
     "license": "MIT",
-    "workspaces": ["packages/*"],
-    "dependencies": {
-        "babel-preset-stage-0": "^6.24.1"
-    }
+    "workspaces": [
+        "packages/*"
+    ],
+    "dependencies": {}
 }
