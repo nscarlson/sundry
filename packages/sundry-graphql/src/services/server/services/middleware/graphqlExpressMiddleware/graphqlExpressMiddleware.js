@@ -1,33 +1,22 @@
 import { graphqlExpress } from 'apollo-server-express'
 import bodyParser from 'body-parser'
+//import dataSources from 'sundry-graphql/src/services/dataSources'
 import { Router } from 'express'
+import gramps from '@gramps/gramps'
 import { makeExecutableSchema } from 'graphql-tools'
 
-const typeDefs = `
-    type Query {
-        hello: String
-    }
-`
+import sundry from 'data-source-sundry'
 
-const resolvers = {
-    Query: { hello: () => 'Hello World!' },
-}
-
-const myGraphQLSchema = makeExecutableSchema({
-    typeDefs,
-    resolvers,
+const GraphQLOptions = gramps({
+    dataSources: [sundry],
+    enableMockData: false,
 })
 
 const graphqlExpressMiddleware = () => {
     const router = new Router()
 
-    router.use(
-        '/graphql',
-        bodyParser.json(),
-        graphqlExpress({
-            schema: myGraphQLSchema,
-        }),
-    )
+    router.use(bodyParser.json())
+    router.use('/graphql', graphqlExpress(GraphQLOptions))
 
     return router
 }

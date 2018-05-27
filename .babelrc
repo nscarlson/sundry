@@ -1,5 +1,5 @@
 {
     "compact": false,
-    "plugins": ["dynamic-import-node"],
+    "plugins": ["dynamic-import-node", "inline-import-graphql-ast"],
     "presets": ["env", "stage-0"]
 }

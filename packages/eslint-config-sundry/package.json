@@ -3,21 +3,22 @@
     "version": "1.0.0",
     "description": "Sundry eslint configuration",
     "scripts": {
-        "build": "react-scripts build",
-        "electron": "electron .",
-        "start": "react-scripts start"
+        "lint": "eslint ."
     },
     "keywords": ["sundry", "wallet", "bitcoin", "open"],
     "author": "Nathan Carlson",
     "license": "MIT",
     "dependencies": {
-        "pbkdf2": "^3.0.14",
-        "prettier-eslint": "^8.8.1",
-        "randombytes": "^2.0.6",
-        "react-scripts": "1.1.1",
-        "secure-random": "^1.1.1",
-        "unorm": "^1.4.1",
-        "url": "^0.11.0"
-    },
-    "workspaces": ["packages/*"]
+        "babel-eslint": "^8.2.3",
+        "eslint": "^4.19.1",
+        "eslint-config-prettier": "^2.9.0",
+        "eslint-plugin-import": "^2.12.0",
+        "eslint-plugin-jest": "^21.15.2",
+        "eslint-plugin-node": "^6.0.1",
+        "eslint-plugin-prettier": "^2.6.0",
+        "eslint-plugin-promise": "^3.8.0",
+        "eslint-plugin-react": "^7.8.2",
+        "prettier": "^1.12.1",
+        "prettier-eslint": "^8.8.1"
+    }
 }
