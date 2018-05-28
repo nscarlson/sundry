@@ -9,7 +9,7 @@ import sundry from 'data-source-sundry'
 
 const GraphQLOptions = gramps({
     dataSources: [sundry],
-    enableMockData: false,
+    enableMockData: true,
 })
 
 const graphqlExpressMiddleware = () => {
